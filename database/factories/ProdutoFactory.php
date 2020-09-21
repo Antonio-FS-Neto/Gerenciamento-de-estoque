@@ -9,6 +9,7 @@ $factory->define(Produto::class, function (Faker $faker) {
     return [
         'nome' => $faker->name,
         'quantidade' => $faker->randomDigit,
-        'valor' => $faker->randomFloat,       
+        'valor' => $faker->randomFloat,    
+        'descricao' =>$faker->text($maxNbChars = 40)
     ];
 });

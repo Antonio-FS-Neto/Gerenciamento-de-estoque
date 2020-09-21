@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -13,7 +14,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $produtos = DB::select('select * from produtos');
+    
+        return view('listagem')->with('produtos', $produtos);
     }
 
     /**
@@ -45,8 +48,16 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $resposta = DB::select('select * from produtos where id = ?', ["$id"]);
+
+        if(empty($resposta)) { 
+            return "Esse produto não existe"; 
+        }
+            
+        return view('detalhes')->with('p', $resposta[0]);
     }
+
+    
 
     /**
      * Show the form for editing the specified resource.

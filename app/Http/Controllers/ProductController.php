@@ -26,6 +26,11 @@ class ProductController extends Controller
      */
     public function create()
     {
+        
+    }
+
+    public function formulario()
+    {
         return view('produto.cadastro');
     }
 
@@ -79,7 +84,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**

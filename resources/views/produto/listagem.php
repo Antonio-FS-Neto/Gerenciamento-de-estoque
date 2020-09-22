@@ -26,7 +26,7 @@
 
                 <?php foreach ($produtos as $p) : ?>
 
-                    <tr>
+                    <tr class="<?php $p->quantidade <= 1 ? 'danger' : ''?>">
                         <td><?= $p->nome ?></td>
                         <td><?= $p->valor ?></td>
                         <td><?= $p->quantidade ?></td>
@@ -41,6 +41,9 @@
         </div>
 
     <?php  } ?>
+
+    <a href="http://stock.test/novo"><button style="background: #069cc2; border-radius: 6px; padding: 15px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Meu Botão</button></a>
+
 </body>
 
 </html>

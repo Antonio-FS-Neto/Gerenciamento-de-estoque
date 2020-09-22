@@ -16,7 +16,7 @@ class ProductController extends Controller
     {
         $produtos = DB::select('select * from produtos');
     
-        return view('listagem')->with('produtos', $produtos);
+        return view('produto.listagem')->with('produtos', $produtos);
     }
 
     /**
@@ -26,7 +26,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('produto.cadastro');
     }
 
     /**
@@ -54,7 +54,7 @@ class ProductController extends Controller
             return "Esse produto não existe"; 
         }
             
-        return view('descricao')->with('p', $resposta[0]);
+        return view('produto.descricao')->with('p', $resposta[0]);
     }
 
     

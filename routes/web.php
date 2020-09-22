@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 
 route::get('listagem', "productController@index");
-
+route::get('descricao/{id}', "ProductController@show");
 
 // Route::get('/', function () {
 //     return view('welcome');

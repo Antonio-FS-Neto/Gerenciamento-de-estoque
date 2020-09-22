@@ -11,25 +11,36 @@
 </head>
 
 <body>
-    <div class="container">
 
-        <h1>Controle de produtos</h1>
+    <?php if (empty($produtos)) { ?>
 
-        <table class="table table-dark table-bordered table-hover">
+        <div class="alert alert-danger"> Você não tem nenhum produto cadastrado. </div>
 
-            <?php foreach ($produtos as $p) : ?>
+    <?php } else { ?>
 
-                <tr>
-                    <td><?= $p->nome ?></td>
-                    <td><?= $p->valor ?></td>
-                    <td><?= $p->descricao ?></td>
-                    <td><?= $p->quantidade ?></td>
-                </tr>
-                
-            <?php endforeach ?>
+        <div class="container">
 
-        </table>
-    </div>
+            <h1>Controle de produtos</h1>
+
+            <table class="table table-dark table-bordered table-hover">
+
+                <?php foreach ($produtos as $p) : ?>
+
+                    <tr>
+                        <td><?= $p->nome ?></td>
+                        <td><?= $p->valor ?></td>
+                        <td><?= $p->quantidade ?></td>
+                        <td>
+                            <a href="http://stock.test/descricao/<?= $p->produto_id ?>">Dscrição</a>
+                        </td>
+                    </tr>
+
+                <?php endforeach ?>
+
+            </table>
+        </div>
+
+    <?php  } ?>
 </body>
 
 </html>

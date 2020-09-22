@@ -48,13 +48,13 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $resposta = DB::select('select * from produtos where id = ?', ["$id"]);
+        $resposta = DB::select('select * from produtos where produto_id = ?', ["$id"]);
 
         if(empty($resposta)) { 
             return "Esse produto não existe"; 
         }
             
-        return view('detalhes')->with('p', $resposta[0]);
+        return view('descricao')->with('p', $resposta[0]);
     }
 
     

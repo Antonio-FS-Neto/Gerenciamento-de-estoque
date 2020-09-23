@@ -44,7 +44,7 @@ class ProductController extends Controller
 
         DB::insert('insert into produtos (nome, descricao, valor, quantidade) values (?,?,?,?)', array($nome, $descricao, $valor, $quantidade));
 
-        return redirect('/listagem');
+        return redirect('/listagem')->withInput($request->only('nome'));
     }
 
     /**

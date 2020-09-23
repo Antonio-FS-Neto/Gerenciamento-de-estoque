@@ -26,7 +26,7 @@
 
                 <?php foreach ($produtos as $p) : ?>
 
-                    <tr class="<?php $p->quantidade <= 1 ? 'danger' : ''?>">
+                    <tr class="<?php $p->quantidade <= 1 ? 'danger' : '' ?>">
                         <td><?= $p->nome ?></td>
                         <td><?= $p->valor ?></td>
                         <td><?= $p->quantidade ?></td>
@@ -43,6 +43,14 @@
     <?php  } ?>
 
     <a href="http://stock.test/novo"><button style="background: #069cc2; border-radius: 6px; padding: 15px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Novo produto</button></a>
+
+    <?php if (old('nome')) { ?>
+        <div class="alert alert-success">
+
+            <strong>Sucesso!</strong> O produto <?= old('nome') ?> foi adicionado.
+
+        </div>
+    <?php } ?>
 
 </body>
 

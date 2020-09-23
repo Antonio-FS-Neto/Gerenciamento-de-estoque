@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 route::get('listagem', "productController@index");
 route::get('descricao/{id}', "ProductController@show");
-route::get('novo', 'ProductController@formulario');
+route::get('novo', 'ProductController@create');
+route::post('adiciona', 'ProductController@store');
 
 // Route::get('/', function () {
 //     return view('welcome');

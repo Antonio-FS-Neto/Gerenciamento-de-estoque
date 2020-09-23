@@ -42,7 +42,7 @@
 
     <?php  } ?>
 
-    <a href="http://stock.test/novo"><button style="background: #069cc2; border-radius: 6px; padding: 15px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Meu Botão</button></a>
+    <a href="http://stock.test/novo"><button style="background: #069cc2; border-radius: 6px; padding: 15px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Novo produto</button></a>
 
 </body>
 

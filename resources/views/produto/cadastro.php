@@ -7,18 +7,20 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>Caastro de produto</title>
+    <title>Novo produto</title>
 </head>
 
 <body>
 
     <h1>Cadastro de novos produtos</h1>
 
-    <form method="get">
+    <form action="/adiciona" method="post">
 
         <div class="card-body">
 
             <div class="container-fluid">
+
+            <input type="hidden" name="_token" value="<?= csrf_token() ?>" />
 
                 <div class="col-lg-2 form-group">
                     <label for="nome">Nome do produto</label> <br>
@@ -37,7 +39,7 @@
 
                 <div class="col-lg-1 form-group">
                     <label for="nome">Quantidade</label> <br>
-                    <input type="text" class="form-control" name="quantidade" id="quantidade" require>
+                    <input type="number" class="form-control" name="quantidade" id="quantidade" require>
                 </div>
 
                 <div class="col-lg-1 mt-n">

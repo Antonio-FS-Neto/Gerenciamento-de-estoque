@@ -26,11 +26,6 @@ class ProductController extends Controller
      */
     public function create()
     {
-        
-    }
-
-    public function formulario()
-    {
         return view('produto.cadastro');
     }
 
@@ -42,7 +37,14 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nome = $request->input('nome');
+        $valor = $request->input('valor'); 
+        $descricao = $request->input('descricao'); 
+        $quantidade = $request->input('quantidade');
+
+        DB::insert('insert into produtos (nome, descricao, valor, quantidade) values (?,?,?,?)', array($nome, $descricao, $valor, $quantidade));
+
+        return redirect('/listagem');
     }
 
     /**

@@ -97,9 +97,11 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-        return view('produto.editar');
+        $resposta = DB::select('select * from produtos where produto_id = ?', ["$id"]);
+            
+        return view('produto.editar')->with('p', $resposta[0]);
     }
 
     /**
@@ -111,9 +113,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $resposta = DB::select('select * from produtos where produto_id = ?', ["$id"]);
-            
-        return view('produto.editar')->with('p', $resposta[0]);
+
     }
 
     /**

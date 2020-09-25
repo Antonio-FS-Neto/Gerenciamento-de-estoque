@@ -14,21 +14,21 @@
 
   <div class="form-group">
     <label for="nome">Nome do produto</label>
-    <input type="text" <?= $p->nome ?> class="form-control" placeholder="Novo nome do produto." name="nome" id="nome">
+    <input type="text" value="<?= $p->nome ?>" class="form-control" placeholder="Novo nome do produto." name="nome" id="nome">
   </div>
 
     <label for="descrição">Nova descrição</label>
-    <input type="text" <?= $p->descricao ?> class="form-control" placeholder="Nova descrição do produto." name="descricao" id="descrição">
+    <input type="text" value="<?=$p->descricao ?>"  class="form-control" placeholder="Nova descrição do produto." name="descricao" id="descrição">
   </div>
 
   <div class="form-group">
     <label for="valor">valor do produto</label>
-    <input type="number" <?= $p->valor ?> class="form-control" placeholder="Novo valor do produto." name="valor" id="valor">
+    <input type="number" value="<?= $p->valor ?>" class="form-control" placeholder="Novo valor do produto." name="valor" id="valor">
   </div>
 
   <div class="form-group">
     <label for="quantidade">Quantidade em estoque</label>
-    <input type="number" <?= $p->quantidade ?> class="form-control" placeholder="Novo valor do produto." name="quantidade" id="quantidade">
+    <input type="number" value="<?= $p->quantidade ?>" class="form-control" placeholder="Novo valor do produto." name="quantidade" id="quantidade">
   </div>
  
   <button type="submit" class="btn btn-info btn-block">Editar</button>

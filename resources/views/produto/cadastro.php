@@ -14,7 +14,7 @@
 
     <h1>Cadastro de novos produtos</h1>
 
-    <form action="/adiciona" method="post">
+    <form action="/adiciona" method="POST">
 
         <div class="card-body">
 
@@ -33,12 +33,12 @@
                 </div>
 
                 <div class="col-lg-1 form-group">
-                    <label for="nome">Valor</label> <br>
-                    <input type="text" class="form-control" name="valor" id="valor" require>
+                    <label for="valor">Valor</label> <br>
+                    <input type="mumber" class="form-control" name="valor" id="valor" require>
                 </div>
 
                 <div class="col-lg-1 form-group">
-                    <label for="nome">Quantidade</label> <br>
+                    <label for="quantidade">Quantidade</label> <br>
                     <input type="number" class="form-control" name="quantidade" id="quantidade" require>
                 </div>
 

@@ -17,10 +17,12 @@
         <div class="alert alert-danger"> Você não tem nenhum produto cadastrado. </div>
 
     <?php } else { ?>
-
+       
         <div class="container">
 
-            <h1>Controle de produtos</h1>
+        <h1>Controle de produtos</h1>
+        
+        <a href="http://stock.test/novo"><button style="background: #069cc2; border-radius: 6px; padding: 15px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Novo produto</button></a>
 
             <table class="table table-dark table-bordered table-hover">
 
@@ -31,18 +33,27 @@
                         <td><?= $p->valor ?></td>
                         <td><?= $p->quantidade ?></td>
                         <td>
-                            <a href="http://stock.test/descricao/<?= $p->produto_id ?>">Dscrição</a>
+                            <a href="http://stock.test/descricao/ <?=$p->produto_id ?>">Descrição</a>
+                        </td>
+                        <td>
+                            <a href="/deletar/<?= $p->produto_id ?>">Deletar</a>
+                        </td>
+                        <td>
+                            <a href="/editar/<?= $p->produto_id ?>">Editar</a>
                         </td>
                     </tr>
 
                 <?php endforeach ?>
 
             </table>
+
+            <?=$produtos->links()?>
+
         </div>
 
     <?php  } ?>
 
-    <a href="http://stock.test/novo"><button style="background: #069cc2; border-radius: 6px; padding: 15px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Novo produto</button></a>
+
 
     <?php if (old('nome')) { ?>
         <div class="alert alert-success">

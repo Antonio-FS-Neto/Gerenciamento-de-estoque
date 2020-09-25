@@ -15,10 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-route::get('listagem', "productController@index");
-route::get('descricao/{id}', "ProductController@show");
+route::get('listagem', "productController@index")->name('listagem_produto');
+route::get('descricao/{id}', "ProductController@show")->name('descricao_prodto');
 route::get('novo', 'ProductController@create');
-route::post('adiciona', 'ProductController@store');
+route::post('adiciona', 'ProductController@store')->name('novo_porduto');
+route::get('deletar/{id}', 'ProductController@destroy')->name('deletar_produto');
+route::get('editar/{id}', 'ProductController@edit')->name('edit_produto');
+
 
 // Route::get('/', function () {
 //     return view('welcome');

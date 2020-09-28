@@ -21,7 +21,8 @@ route::get('novo', 'ProductController@create');
 route::post('adiciona', 'ProductController@store')->name('novo_porduto');
 route::get('deletar/{id}', 'ProductController@destroy')->name('deletar_produto');
 route::get('editar/{id}', 'ProductController@edit')->name('edit_produto');
-
+route::put('update/{id}', 'ProductController@update')->name('update_produto');
+route::get('json', 'ProductController@ListaJson')->name('consulta_json');
 
 // Route::get('/', function () {
 //     return view('welcome');

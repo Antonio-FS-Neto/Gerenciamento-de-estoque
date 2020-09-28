@@ -23,6 +23,14 @@ class ProductController extends Controller
         return view('produto.listagem')->with('produtos', $produtos);
     }
 
+    public function ListaJson()
+    {
+        $produtos = DB::select('select * from produtos');
+
+        return response()->json($produtos);
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -113,7 +121,17 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $produto = Produto::find($id);
+        $produto->nome = $request->input('nome');
+        $produto->valor = $request->input('valor');
+        $produto->descricao = $request->input('descricao'); 
+        $produto->quantidade = $request->input('quantidade');
 
+        $produto->valor = str_replace("," , "." , $produto->valor);
+        
+        $produto->save();
+
+        return redirect('/listagem')->withInput($request->only('nome'));
     }
 
     /**

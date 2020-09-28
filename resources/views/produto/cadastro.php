@@ -20,7 +20,7 @@
 
             <div class="container-fluid">
 
-            <input type="hidden" name="_token" value="<?= csrf_token() ?>" />
+                <input type="hidden" name="_token" value="<?= csrf_token() ?>" />
 
                 <div class="col-lg-2 form-group">
                     <label for="nome">Nome do produto</label> <br>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 
 route::get('listagem', "productController@index")->name('listagem_produto');
 route::get('descricao/{id}', "ProductController@show")->name('descricao_prodto');
@@ -27,3 +27,7 @@ route::get('json', 'ProductController@ListaJson')->name('consulta_json');
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

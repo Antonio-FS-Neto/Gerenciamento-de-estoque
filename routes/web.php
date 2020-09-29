@@ -24,6 +24,8 @@ route::get('editar/{id}', 'ProductController@edit')->name('edit_produto');
 route::put('update/{id}', 'ProductController@update')->name('update_produto');
 route::get('json', 'ProductController@ListaJson')->name('consulta_json');
 
+Route::get('/login', 'LoginController@login');
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });

@@ -15,19 +15,20 @@
 
     <div class="container">
 
-        <h1>Detalhes do produto: <?= $p->nome ?></h1>
+        <div class="col-lg-2 mt-n">
+            <a href="http://stock.test/listagem"><button type="submit" class="btn btn-info btn-block">Listagem</button></a>
+        </div>
 
         <table class="table table-dark table-bordered table-hover">
-            <ul>
-                <li> <b>Valor:</b> R$ <?= $p->valor ?> </li>
-                <li> <b>Quantidade em estoque:</b> <?= $p->quantidade ?> </li>
-                <li> <b>Descrição do produto:</b> <?= $p->descricao ?> </li>
+            <ul class="list-group">
+                <li class="list-group-item active">Detalhes do produto:<b> <?= $p->nome ?> </b> </li>
+                <li class="list-group-item"> <b>Valor:</b> R$ <?= $p->valor ?> </li>
+                <li class="list-group-item"> <b>Quantidade em estoque:</b> <?= $p->quantidade ?> </li>
+                <li class="list-group-item"> <b>Descrição do produto:</b> <?= $p->descricao ?> </li>
             </ul>
         </table>
 
-        
     </div>
-        
 
 </body>
 

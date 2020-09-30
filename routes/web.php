@@ -18,10 +18,14 @@ use Illuminate\Support\Facades\Auth;
 route::get('listagem', "productController@index")->name('listagem_produto');
 route::get('descricao/{id}', "ProductController@show")->name('descricao_prodto');
 route::get('novo', 'ProductController@create');
-route::post('adiciona', 'ProductController@store')->name('novo_porduto');
-route::get('deletar/{id}', 'ProductController@destroy')->name('deletar_produto');
 route::get('editar/{id}', 'ProductController@edit')->name('edit_produto');
-route::put('update/{id}', 'ProductController@update')->name('update_produto');
+
+Route::group(['middleware' => ['autenticacao']], function () {
+    route::post('adiciona', 'ProductController@store')->name('novo_porduto');
+    route::get('deletar/{id}', 'ProductController@destroy')->name('deletar_produto');
+    route::put('update/{id}', 'ProductController@update')->name('update_produto');
+});
+
 route::get('json', 'ProductController@ListaJson')->name('consulta_json');
 
 Route::get('/login', 'LoginController@login');

@@ -16,9 +16,9 @@ class AutenticacaoMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(!$request->is('auth/login') && Auth::guest()) 
+        if(!$request->is('login') && Auth::guest()) 
         {
-             return redirect('/auth/login'); 
+             return redirect('login'); 
         } 
         
         return $next($request);

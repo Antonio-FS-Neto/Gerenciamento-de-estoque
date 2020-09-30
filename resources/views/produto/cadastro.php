@@ -22,29 +22,27 @@
 
                 <input type="hidden" name="_token" value="<?= csrf_token() ?>" />
 
-                <div class="col-lg-2 form-group">
-                    <label for="nome">Nome do produto</label> <br>
-                    <input type="text" class="form-control" name="nome" id="nome" require>
+                <div class="form-group">
+                    <label for="nome">Nome do produto</label>
+                    <input type="text" class="form-control" placeholder="Novo nome do produto." name="nome" id="nome">
                 </div>
 
-                <div class="col-lg-3 form-group">
-                    <label for="desc">Descrição do produto</label> <br>
-                    <input type="text" class="form-control" name="descricao" id="descricao" require>
+                <div class="form-group">
+                    <label for="descrição">Nova descrição</label>
+                    <input type="text" class="form-control" placeholder="Nova descrição do produto." name="descricao" id="descrição">
                 </div>
 
-                <div class="col-lg-1 form-group">
-                    <label for="valor">Valor</label> <br>
-                    <input type="mumber" class="form-control" name="valor" id="valor" require>
+                <div class="form-group">
+                    <label for="valor">valor do produto</label>
+                    <input type="number" class="form-control" placeholder="Novo valor do produto." name="valor" id="valor">
                 </div>
 
-                <div class="col-lg-1 form-group">
-                    <label for="quantidade">Quantidade</label> <br>
-                    <input type="number" class="form-control" name="quantidade" id="quantidade" require>
+                <div class="form-group">
+                    <label for="quantidade">Quantidade em estoque</label>
+                    <input type="number" class="form-control" placeholder="Novo valor do produto." name="quantidade" id="quantidade">
                 </div>
 
-                <div class="col-lg-1 mt-n">
-                    <button type="submit" class="btn btn-info btn-block">Cadastrar</button>
-                </div>
+            <button type="submit" class="btn btn-info btn-block">Cadastrar</button>
     </form>
 
     </div>

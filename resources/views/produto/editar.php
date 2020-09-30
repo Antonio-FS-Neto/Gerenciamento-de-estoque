@@ -22,8 +22,9 @@
       <input type="text" value="<?= $p->nome ?>" class="form-control" placeholder="Novo nome do produto." name="nome" id="nome">
     </div>
 
-    <label for="descrição">Nova descrição</label>
-    <input type="text" value="<?= $p->descricao ?>" class="form-control" placeholder="Nova descrição do produto." name="descricao" id="descrição">
+    <div>
+      <label for="descrição">Nova descrição</label>
+      <input type="text" value="<?= $p->descricao ?>" class="form-control" placeholder="Nova descrição do produto." name="descricao" id="descrição">
     </div>
 
     <div class="form-group">

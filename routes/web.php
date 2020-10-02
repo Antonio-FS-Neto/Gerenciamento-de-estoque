@@ -15,24 +15,21 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-route::get('listagem', "productController@index")->name('listagem_produto');
-route::get('descricao/{id}', "ProductController@show")->name('descricao_prodto');
-route::get('novo', 'ProductController@create');
-route::get('editar/{id}', 'ProductController@edit')->name('edit_produto');
+Route::get('listagem', "productController@index")->name('listagem_produto');
+Route::get('descricao/{id}', "ProductController@show")->name('descricao_prodto');
+Route::get('novo', 'ProductController@create');
+Route::get('editar/{id}', 'ProductController@edit')->name('edit_produto');
+Route::get('apagar', 'ProductController@delete')->name('delete_produto');
 
 Route::group(['middleware' => ['autenticacao']], function () {
-    route::post('adiciona', 'ProductController@store')->name('novo_porduto');
-    route::get('deletar/{id}', 'ProductController@destroy')->name('deletar_produto');
-    route::put('update/{id}', 'ProductController@update')->name('update_produto');
+    Route::post('adiciona', 'ProductController@store')->name('novo_porduto');
+    Route::get('deletar/{id}', 'ProductController@destroy')->name('deletar_produto');
+    Route::put('update/{id}', 'ProductController@update')->name('update_produto');
 });
 
-route::get('json', 'ProductController@ListaJson')->name('consulta_json');
+Route::get('json', 'ProductController@ListaJson')->name('consulta_json');
 
 Route::get('/login', 'LoginController@login');
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 Auth::routes();
 

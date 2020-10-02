@@ -27,7 +27,11 @@ class ProductController extends Controller
     {
         $produtos = DB::select('select * from produtos');
 
-        return response()->json($produtos);
+        $retorno = ['status' => true,
+                    'message' => 'pool cadastrado com sucesso'];
+
+
+        return response()->json($retorno, 200);
 
     }
 
@@ -122,6 +126,11 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $produto = Produto::find($id);
+
+        if (!$produto){
+            return response()->json(['message' => 'produto não encontrado'],404);
+        }
+
         $produto->nome = $request->input('nome');
         $produto->valor = $request->input('valor');
         $produto->descricao = $request->input('descricao'); 
@@ -146,5 +155,12 @@ class ProductController extends Controller
         $produto->delete();
 
         return redirect(route('listagem_produto'));
+    }
+
+    public function delete($id)
+    {
+        $produto = Produto::find($id);
+
+        return view('produto.delete')->with('p', $produto);
     }
 }

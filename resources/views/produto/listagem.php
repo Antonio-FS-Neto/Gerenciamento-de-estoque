@@ -36,7 +36,7 @@
                             <a href="http://stock.test/descricao/ <?=$p->produto_id ?>">Descrição</a>
                         </td>
                         <td>
-                            <a href="/deletar/<?= $p->produto_id ?>">Deletar</a>
+                            <a href="/apagar">Deletar</a>
                         </td>
                         <td>
                             <a href="/editar/<?= $p->produto_id ?>">Editar</a>

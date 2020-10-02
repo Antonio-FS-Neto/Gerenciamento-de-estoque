@@ -19,7 +19,7 @@ Route::get('listagem', "productController@index")->name('listagem_produto');
 Route::get('descricao/{id}', "ProductController@show")->name('descricao_prodto');
 Route::get('novo', 'ProductController@create');
 Route::get('editar/{id}', 'ProductController@edit')->name('edit_produto');
-Route::get('apagar', 'ProductController@delete')->name('delete_produto');
+Route::get('apagar/{id}', 'ProductController@delete')->name('delete_produto');
 
 Route::group(['middleware' => ['autenticacao']], function () {
     Route::post('adiciona', 'ProductController@store')->name('novo_porduto');
